@@ -4,10 +4,16 @@
       <el-aside>
         <Menu />
       </el-aside>
-      <el-main>
-        <img alt="Vue logo" src="./assets/logo.png">
-        <HelloWorld msg="Welcome to Your Vue.js App"/>
-      </el-main>
+      <el-container>
+        <el-header>
+          <el-divider direction="vertical"></el-divider>
+          <span>你好：admin</span>
+        </el-header>
+        <el-main>
+          <router-view/>
+
+        </el-main>
+      </el-container>
   </el-container>
   </div>
 </template>
@@ -33,4 +39,13 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+.el-header {
+  color: #333;
+  line-height: 60px;
+  text-align: right;
+}
+a {
+  text-decoration: none;
+}
+
 </style>

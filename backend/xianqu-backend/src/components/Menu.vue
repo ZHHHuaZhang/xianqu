@@ -1,19 +1,23 @@
 <template>
             <el-menu
-        default-active="2"
+        default-active="1"
         class="el-menu-vertical-demo"
         @open="handleOpen"
         @close="handleClose">
 
-          <el-menu-item index="1">
-            <i class="el-icon-s-home"></i>
-            <span slot="title">营销数据</span>
-          </el-menu-item>
+          <router-link to="/">
+            <el-menu-item index="1">
+              <i class="el-icon-s-home"></i>
+              <span slot="title">营销数据</span>
+            </el-menu-item>
+          </router-link>
 
-          <el-menu-item index="2">
-            <i class="el-icon-view"></i>
-            <span slot="title">闲置审核</span>
-          </el-menu-item>
+          <router-link to="/foo">
+            <el-menu-item index="2">
+              <i class="el-icon-view"></i>
+              <span slot="title">闲置审核</span>
+            </el-menu-item>
+          </router-link>
 
           <el-menu-item index="3">
             <i class="el-icon-service"></i>
