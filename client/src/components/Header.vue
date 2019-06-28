@@ -1,17 +1,19 @@
 <template>
-  <v-toolbar dark color="primary" class="sticky-top-u-c">
-    <v-text-field placeholder="search" class="input-u-c" box></v-text-field>
-    <v-btn icon>
-      <v-icon>search</v-icon>
-    </v-btn>  
-  </v-toolbar>  
+  <el-header class="sticky-top-u-c">
+    <el-input
+      size="medium"
+      placeholder="search"
+      suffix-icon="el-icon-search"
+      v-model="input">
+    </el-input>
+  </el-header>  
 </template>
 
 <script>
 export default {
   data(){
     return{
-      inputAplha: 0.3
+      input: ''
     }
   }
 }
@@ -22,24 +24,10 @@ export default {
     position: sticky !important;
     background: #5044ea;
     color: #ffffff;
-    height: 14vw;
-    z-index: 1000;
-  }
-  .container-text-u-c{
-    padding: 16px;
-    font-size: 1rem;
-  }
-  .search-container-u-c{
-    background: #ffffff;
-    opacity: 0.5;
-    width: 65%;
+    z-index: 100;
     display: flex;
-    height: 80%;
-  }
-  .input-u-c{
-    width: 80%;
-    /* height: 60%; */
-    font-size: 6vw;
+    align-items: center;
+    top: 0;
   }
 </style>
 

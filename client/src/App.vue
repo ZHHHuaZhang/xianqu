@@ -1,21 +1,26 @@
 <template>
-  <main>
-    <transition name="bounce" v-on:enter="enter">
+  <el-container direction="vertical">
+    <app-header/>
+    <!-- <transition name="bounce" v-on:enter="enter"> -->
       <router-view/>
-    </transition>
+    <!-- </transition> -->
     <bottom-bar :hash="post.hash"/>
-  </main>
+  </el-container>
 </template>
 
 <script>
 import Vue from 'vue';
+import Header from './components/Header';
+import ElementUI from 'element-ui';
 import BottomBar from './components/BottomBar';
 import IndexPage from './components/page/Index';
 import Pub from './components/page/Pub';
 import ME from './components/page/ME';
 import MSG from './components/page/MSG';
 import VueRouter from 'vue-router';
+import '../node_modules/element-ui/lib/theme-chalk/index.css';
 Vue.use(VueRouter);
+Vue.use(ElementUI);
 
 
 
@@ -30,7 +35,7 @@ const routes = [
 const router = new VueRouter({
   routes, //routes:routes
   scrollBehavior (to, from, savedPosition) {
-    return {}
+    return {x:0, y:0}
   }
 })
 
@@ -38,7 +43,8 @@ const router = new VueRouter({
 export default {
   router,
   components: {
-    'bottom-bar': BottomBar
+    'bottom-bar': BottomBar,
+    'app-header': Header
   },
   data () {
       return {

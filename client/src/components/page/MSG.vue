@@ -1,30 +1,44 @@
  <template>
-  <v-timeline>
-    <v-timeline-item
-      v-for="n in 4"
-      :key="n"
-      color="red lighten-2"
-      large
-    >
-      <template v-slot:opposite>
-        <span>Tus eu perfecto</span>
-      </template>
-      <v-card class="elevation-2">
-        <v-card-title class="headline">Lorem ipsum</v-card-title>
-        <v-card-text>
-          Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
-        </v-card-text>
-      </v-card>
-    </v-timeline-item>
-  </v-timeline>
+  <el-main>
+    
+    <router-link v-for="i in list" class="list-item" style="list-style:none" :to="i.url" >
+      <el-row :gutter="20">
+        <el-col :span="8">
+          <el-image
+            style="width: 100px; height: 100px"
+            :src="i.img"
+            fit="contain">
+          </el-image>
+        </el-col>
+        <el-col :span="16">
+          <div>
+            <h1>{{i.url}}</h1>
+            <p>123456</p>
+          </div>
+        </el-col>
+      </el-row>
+    </router-link>
+      
+  </el-main>
 </template>
 
 <style scoped>
-  .msg-u-c{
-    height: 100%;
-    width: 100%;
-    background: #565656;
-    position: absolute;
-  }
+  
 </style>
+
+<script>
+export default {
+  data () {
+    return {
+      list: [{
+        url: '/index'
+      },
+      {
+        url: '/pub'
+      }],
+    }
+  }
+}
+</script>
+
 

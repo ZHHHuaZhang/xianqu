@@ -1,25 +1,10 @@
 <template>
-  <v-card flat tile class="imgQueue-3-u-c">
-    <v-img v-for="img in ajax" :class="img.cssClass"
-      :src="img.url" :key="img.url"
-      aspect-ratio="1"
-      class="grey lighten-2"
-      gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"
-    >
-      <template v-slot:placeholder>
-        <v-layout
-          fill-height
-          align-center
-          justify-center
-          ma-0
-        >
-          <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-        </v-layout>
-      </template>
-    </v-img>
-    <button @click="next">bbbb</button>
-  </v-card>
-            
+  <div class="block">
+  <el-carousel trigger="click" height="150px">
+    <el-carousel-item v-for="item in 4" :key="item">
+    </el-carousel-item>
+  </el-carousel>
+  </div>
 </template>
 
 <script>
@@ -64,53 +49,14 @@
 </script>
 
 <style scoped>
-  .imgQueue-3-u-c{
-    position: absolute !important;
-    top:8vh;
-    z-index:50;
-    width:100%;
-    height: 70vw;
-    overflow: hidden;
-    background: transparent;
+  .el-carousel__item{
+    box-shadow:  0 2px 12px 0 rgba(0, 0, 0, 0.1)
   }
-  .bg-opacity-img-u-c{
-    background: aliceblue;
+  .el-carousel__item:nth-child(2n) {
+     background-color: #99a9bf;
   }
-  .center-to-main{
-    transform: translateY(-50%);
-    /* top: 30vw; */
-  }
-  .imgQueue-3-u-c>*{
-    top:50%;
-    transform: translateY(-50%);
-    border: 5px solid #ffffff;
-  }
-  .imgQueue-3-u-c>.child-1,
-  .imgQueue-3-u-c>.child-3{
-    /* flex: 1; */
-    position: absolute;
-    width: 48vw;
-    height: 30vw;
-    top:50%;
-    opacity: 0.8;
-    transition: all 1s ease-out;
-  }
-  .imgQueue-3-u-c>.child-1{
-    left:-30vw;
-  }
-  .imgQueue-3-u-c>.child-3{
-    left:80vw;
-  }
-  .imgQueue-3-u-c>.child-2{
-    z-index:100;
-    position: absolute;
-    width: 80vw;
-    height: 50vw;
-    flex: 3;
-    left: 10vw;
-    opacity: 1;
-    /* transform: translateX(-50%); */
-    
-    transition: all .75s ease-out;
+  
+  .el-carousel__item:nth-child(2n+1) {
+     background-color: #d3dce6;
   }
 </style>
